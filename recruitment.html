@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hrec – Recruitment</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="brand" aria-label="Brand"><a href="index.html" class="brand-link">Hrec<span class="dot">.</span></a></div>
+      <nav class="main-nav" aria-label="Main">
+        <a href="recruitment.html" aria-current="page">Recruitment</a>
+        <a href="hr.html">HR</a>
+        <a href="profile.html">Profile</a>
+        <button id="themeSwitch" class="theme-switch" type="button" title="Toggle theme"></button>
+      </nav>
+    </header>
+
+    <main class="container">
+      <section class="hero">
+        <div class="panel">
+          <h2 class="hero-title">How it work define</h2>
+          <p class="muted">Upload your resume to get started. We keep files only in your browser (IndexedDB).</p>
+        </div>
+      </section>
+
+      <section id="uploader">
+        <div class="panel center">
+          <div id="dropzone" class="dropzone" role="button" tabindex="0" aria-label="Upload your resume">
+            <div class="dz-inner">
+              <strong>upload<br/>your<br/>resume</strong>
+            </div>
+            <input id="fileInput" class="sr-only-file" type="file" accept=".pdf,.doc,.docx" />
+          </div>
+          <p class="muted">Accepted: PDF, DOC, DOCX • Max 5 MB</p>
+          <button id="pickBtn" class="btn" type="button">Choose file</button>
+          <div id="status" class="muted" aria-live="polite" style="margin-top:8px;"></div>
+        </div>
+      </section>
+
+      <section id="uploads">
+        <h2>Your uploads</h2>
+        <div id="list" class="upload-list"></div>
+      </section>
+    </main>
+
+    <script src="theme.js" defer></script>
+    <script src="recruitment.js" defer></script>
+  </body>
+  </html>

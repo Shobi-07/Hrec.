@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hrec – HR Model</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="brand" aria-label="Brand"><a href="index.html" class="brand-link">Hrec<span class="dot">.</span></a></div>
+      <nav class="main-nav" aria-label="Main">
+        <a href="recruitment.html">Recruitment</a>
+        <a href="hr.html" aria-current="page">HR</a>
+        <a href="profile.html">Profile</a>
+        <button id="themeSwitch" class="theme-switch" type="button" title="Toggle theme"></button>
+      </nav>
+    </header>
+
+    <main class="container">
+      <h1 class="page-title">HR model</h1>
+
+      <section class="rounds">
+        <div class="round-grid">
+          <button id="round-assessment" class="button-card" data-round="assessment">
+            assessment<br/>round
+            <div class="status-line"><small id="status-assessment" class="muted"></small></div>
+          </button>
+          <button id="round-ops" class="button-card" data-round="ops">
+            Ops<br/>round
+            <div class="status-line"><small id="status-ops" class="muted"></small></div>
+          </button>
+          <button id="round-hr" class="button-card" data-round="hr">
+            HR<br/>round
+            <div class="status-line"><small id="status-hr" class="muted"></small></div>
+          </button>
+        </div>
+      </section>
+
+      <section class="toolbar">
+        <button id="adminToggle" class="btn" type="button">Admin mode</button>
+        <button id="exportBtn" class="btn subtle" type="button">Export questions</button>
+        <button id="importBtn" class="btn subtle" type="button">Import</button>
+        <input id="importInput" class="sr-only-file" type="file" accept="application/json" />
+      </section>
+
+      <section id="adminPanel" class="panel hidden">
+        <h2>Admin: Add question</h2>
+        <form id="questionForm" class="q-form">
+          <label class="q-row">
+            <span class="label">Round</span>
+            <select id="roundSelect">
+              <option value="assessment">Assessment round</option>
+              <option value="ops">Ops round</option>
+              <option value="hr">HR round</option>
+            </select>
+          </label>
+          <label class="q-row">
+            <span class="label">Question</span>
+            <input id="questionText" type="text" required placeholder="Type question..." />
+          </label>
+
+          <div class="options">
+            <div class="option">
+              <input type="radio" name="correct" value="0" aria-label="Correct option 1" checked />
+              <input type="text" class="opt" placeholder="Option 1" required />
+            </div>
+            <div class="option">
+              <input type="radio" name="correct" value="1" aria-label="Correct option 2" />
+              <input type="text" class="opt" placeholder="Option 2" required />
+            </div>
+            <div class="option">
+              <input type="radio" name="correct" value="2" aria-label="Correct option 3" />
+              <input type="text" class="opt" placeholder="Option 3" required />
+            </div>
+            <div class="option">
+              <input type="radio" name="correct" value="3" aria-label="Correct option 4" />
+              <input type="text" class="opt" placeholder="Option 4" required />
+            </div>
+          </div>
+
+          <div class="modal-actions">
+            <button id="seedBtn" class="btn subtle" type="button">Seed demo data</button>
+            <button class="btn primary" type="submit">Save question</button>
+          </div>
+        </form>
+
+        <div id="questionList" class="upload-list" style="margin-top:14px;"></div>
+      </section>
+
+      <section id="quiz" class="panel hidden">
+        <div class="quiz-head">
+          <h2 id="quizTitle">Assessment</h2>
+          <div class="quiz-tools">
+            <span id="timer" class="muted" title="Time remaining">05:00</span>
+            <button id="quitQuiz" class="btn subtle" type="button">End</button>
+          </div>
+        </div>
+        <form id="quizForm" class="quiz-form"></form>
+        <div class="modal-actions">
+          <button id="submitQuiz" class="btn primary" type="button">Submit answers</button>
+        </div>
+        <p id="quizResult" class="muted" aria-live="polite"></p>
+      </section>
+    </main>
+
+    <script src="theme.js" defer></script>
+    <script src="hr.js" defer></script>
+  </body>
+  </html>
+
+

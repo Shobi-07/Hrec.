@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hrec</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="brand" aria-label="Brand"><a href="index.html" class="brand-link">Hrec<span class="dot">.</span></a></div>
+      <nav class="main-nav" aria-label="Main">
+        <a href="recruitment.html">Recruitment</a>
+        <a href="hr.html">HR</a>
+        <a href="profile.html">Profile</a>
+        <button id="themeSwitch" class="theme-switch" type="button" title="Toggle theme"></button>
+      </nav>
+    </header>
+
+    <main class="container">
+      <section id="about">
+        <h2>About us :</h2>
+        <div class="about-editor">
+          <input id="aboutInput" type="text" placeholder="Write a short line about your company..." aria-label="About us" />
+          <button id="saveAboutBtn" class="btn primary" type="button">Save</button>
+        </div>
+        <p id="aboutPreview" class="muted" aria-live="polite"></p>
+      </section>
+
+      <section id="dashboard">
+        <h2>Dashboard :</h2>
+        <div class="toolbar">
+          <button id="addWidgetBtn" class="btn" type="button">Add widget</button>
+          <button id="resetBtn" class="btn subtle" type="button">Reset</button>
+        </div>
+        <div id="dashboardGrid" class="grid" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <!-- Modal dialog for creating/editing a widget -->
+    <div id="widgetDialog" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="dialogTitle">
+      <div class="modal-card">
+        <h3 id="dialogTitle">Edit widget</h3>
+        <form id="widgetForm">
+          <label>
+            <span class="label">Title</span>
+            <input id="widgetTitle" type="text" required />
+          </label>
+          <label>
+            <span class="label">Value</span>
+            <input id="widgetValue" type="text" required />
+          </label>
+          <div class="modal-actions">
+            <button type="button" id="cancelDialog" class="btn subtle">Cancel</button>
+            <button type="submit" class="btn primary">Save</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="theme.js" defer></script>
+    <script src="script.js" defer></script>
+  </body>
+  </html>
+

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hrec – Profile</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="theme.js" defer></script>
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="brand" aria-label="Brand"><a href="index.html" class="brand-link">Hrec<span class="dot">.</span></a></div>
+      <nav class="main-nav" aria-label="Main">
+        <a href="recruitment.html">Recruitment</a>
+        <a href="hr.html">HR</a>
+        <a href="profile.html" aria-current="page">Profile</a>
+        <button id="themeSwitch" class="theme-switch" type="button" title="Toggle theme"></button>
+      </nav>
+    </header>
+
+    <main class="container">
+      <h1 class="page-title">Profile</h1>
+
+      <section class="profile-grid">
+        <div class="panel profile-card">
+          <div class="avatar-wrapper">
+            <img id="avatar" class="avatar" alt="Profile photo" src="" />
+            <input id="avatarInput" class="sr-only-file" type="file" accept="image/*" />
+          </div>
+          <div class="avatar-actions">
+            <button id="changePhoto" class="btn" type="button">Change photo</button>
+            <button id="removePhoto" class="btn subtle" type="button">Remove</button>
+          </div>
+          <div class="theme-toggle">
+            <label for="themeSelect" class="label">Theme</label>
+            <select id="themeSelect">
+              <option value="light">Light</option>
+              <option value="dark">Dark</option>
+            </select>
+          </div>
+          <button id="logoutBtn" class="btn danger" type="button" style="margin-top:10px;">Log out</button>
+        </div>
+
+        <div class="panel">
+          <h2>Profile details</h2>
+          <form id="profileForm" class="q-form">
+            <label class="q-row">
+              <span class="label">Name</span>
+              <input id="name" type="text" placeholder="Your full name" required />
+            </label>
+
+            <label class="q-row">
+              <span class="label">Phone number</span>
+              <input id="phone" type="tel" inputmode="numeric" pattern="[0-9]{10}" placeholder="10-digit number" required />
+            </label>
+
+            <div class="grid-2">
+              <label class="q-row">
+                <span class="label">Birthdate</span>
+                <input id="birthdate" type="date" />
+              </label>
+              <label class="q-row">
+                <span class="label">Age</span>
+                <input id="age" type="number" min="0" max="120" placeholder="Years" />
+              </label>
+            </div>
+
+            <div class="modal-actions">
+              <button id="resetBtn" class="btn subtle" type="button">Reset</button>
+              <button class="btn primary" type="submit">Save</button>
+            </div>
+          </form>
+          <p id="saveStatus" class="muted" aria-live="polite"></p>
+        </div>
+      </section>
+    </main>
+
+    <script src="profile.js" defer></script>
+  </body>
+  </html>
+
+
